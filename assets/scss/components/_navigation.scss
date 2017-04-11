@@ -1,0 +1,40 @@
+$component: '.navigation';
+
+#{$component} {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 0;
+}
+
+#{$component} .nav-list {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#{$component} .nav-list-item {
+  color: $blue;
+  font-family: $anaheim;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  &::after {
+    display: inline-block;
+    margin: 0 10px;
+    content: '/';
+  }
+  &:last-child::after {
+    display: none;
+  }
+}
+
+#{$component} .nav-list-item a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

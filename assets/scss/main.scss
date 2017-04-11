@@ -1,0 +1,13 @@
+@import '~normalize.css/normalize.css';
+
+// globals
+@import 'globals/palette';
+@import 'globals/typography';
+@import 'globals/scaffolding';
+
+// pages
+@import 'pages/home';
+
+// Components
+@import 'components/logo';
+@import 'components/navigation';
