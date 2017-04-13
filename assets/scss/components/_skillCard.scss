@@ -1,0 +1,67 @@
+$component: '.skill-card';
+
+#{$component} {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-bottom: 200px;
+  &:first-child {
+    margin-top: 200px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+#{$component} .skill-heading {
+  position: relative;
+  width: 40%;
+  padding-bottom: 40%;
+  background: $blue;
+  h4, p {
+    color: $white;
+  }
+}
+
+#{$component} .skill-heading--inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 25px;
+  h4, p {
+    margin: 0;
+  }
+  h4 {
+    margin-bottom: 10px;
+    font-size: $heading-font-size;
+  }
+}
+
+#{$component} .skill-slider {
+  position: absolute;
+  left: 33%;
+  bottom: 10%;
+  width: 45%;
+  height: 200px;
+  padding-bottom: 45%;
+  border: 5px solid $blue;
+  background: $white;
+  z-index: -1;
+}
+
+#{$component} .skill-slider--inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#{$component}.flipped {
+  .skill-heading {
+    margin-left: auto;
+  }
+  .skill-slider {
+    position: absolute;
+    right: 33%;
+    left: auto;
+  }
+}

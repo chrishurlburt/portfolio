@@ -1,11 +1,23 @@
 $component: '.navigation';
 
 #{$component} {
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
+  justify-content: center;
   width: 100%;
   padding: 25px 0;
+  z-index: 2;
+}
+
+#{$component} .nav-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 65px;
+  height: 65px;
+  transition: opacity .2s ease-in;
 }
 
 #{$component} .nav-list {
@@ -37,4 +49,9 @@ $component: '.navigation';
   &:hover {
     text-decoration: underline;
   }
+}
+
+#{$home-page} #{$component} .nav-logo {
+  opacity: 0;
+  pointer-events: none;
 }

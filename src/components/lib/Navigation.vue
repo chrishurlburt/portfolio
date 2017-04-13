@@ -1,5 +1,8 @@
 <template>
   <nav class="navigation">
+    <a href="/#/" class="nav-logo">
+      <Logo :still="true" />
+    </a>
     <ul class="nav-list">
       <li class="nav-list-item"><router-link to="about">About</router-link></li>
       <li class="nav-list-item"><router-link to="work">Work</router-link></li>
@@ -10,7 +13,12 @@
 </template>
 
 <script>
-  export default {
+import Logo from './Logo'
 
-  }
+
+export default {
+  components: {
+    Logo
+  },
+}
 </script>

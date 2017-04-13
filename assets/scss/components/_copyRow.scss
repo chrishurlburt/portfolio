@@ -1,0 +1,45 @@
+$component: '.copy-row';
+
+#{$component} #{$component}--inner {
+  @include flex-grid-row;
+  position: relative;
+}
+
+#{$component} .title-block {
+  padding: 30px;
+  background: $blue;
+  width: 50%;
+  height: 400px;
+  transform-origin: 100% 50%;
+  & > h3 {
+    margin: 0;
+    color: $white;
+    font-size: $heading-font-size;
+  }
+}
+
+#{$component} .copy-block {
+  position: absolute;
+  width: 75%;
+  bottom: 20%;
+  padding: 30px;
+  right: 0;
+  background: $white;
+  p {
+    visibility: hidden;
+    margin: 0;
+  }
+}
+
+#{$component} {
+
+  .titleBlockTransition-enter-active {
+    transform: scaleX(1);
+    transition: transform .4s ease-in-out;
+  }
+
+  .titleBlockTransition-enter {
+    transform: scaleX(0);
+  }
+
+}

@@ -18,7 +18,6 @@ export default {
   },
   mounted() {
     particlesJS('particles', particlesConfig, () => console.log('loaded'))
-    // console.log(particlesConfig)
   }
 }
 </script>

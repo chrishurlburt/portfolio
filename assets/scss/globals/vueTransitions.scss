@@ -1,0 +1,16 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s linear;
+}
+.fade-enter, .fade-leave-to {
+  position: absolute;
+  opacity: 0;
+}
+
+.scaleX-enter-active, .scaleX-leave-active {
+  transform: scaleX(1);
+  transition: transform .4s ease-in-out;
+}
+
+.scaleX-enter, .scaleX-leave-to {
+  transform: scaleX(0);
+}
