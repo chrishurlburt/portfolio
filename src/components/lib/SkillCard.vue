@@ -16,17 +16,23 @@
           </p>
         </transition>
       </div>
+      <Slider :images="icons" :animate="animate"></Slider>
     </div>
   </section>
 </template>
 
 <script>
+import Slider from './Slider'
+
 export default {
   data() {
     return {
       reveal: false,
       finished: false,
     }
+  },
+  components: {
+    Slider,
   },
   watch: {
     animate(val) {
@@ -50,6 +56,10 @@ export default {
     animate: {
       type: Boolean,
       default: () => false,
+    },
+    icons: {
+      type: Array,
+      default: () => [],
     },
   },
 }

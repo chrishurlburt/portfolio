@@ -1,7 +1,7 @@
 $component: '.skill-card';
 
 $marker-size: 20px;
-$card-spacing: 200px;
+$card-spacing: 100px;
 
 #{$component} {
   display: flex;
@@ -51,6 +51,10 @@ $card-spacing: 200px;
   background: $blue;
   transform-origin: left center;
   transition: transform .2s ease-out;
+}
+
+#{$component} .skill-description {
+  margin-bottom: 12px;
 }
 
 #{$component} .divider {
