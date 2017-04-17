@@ -8,44 +8,52 @@
     <div class="skills--inner">
       <div class="skill-line"></div>
       <div class="skills-list">
-        <Skill-card
-          :animate="shouldAnimate('backend')"
-          key="backend"
-          :icons="['https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg', 'https://cdn.worldvectorlogo.com/logos/firebase-1.svg', 'https://cdn.worldvectorlogo.com/logos/mongodb.svg', 'https://cdn.worldvectorlogo.com/logos/mysql.svg', 'https://cdn.worldvectorlogo.com/logos/laravel.svg', 'https://cdn.worldvectorlogo.com/logos/wordpress-blue.svg']"
-        >
-          <template slot="skill">Backend</template>
-          <template slot="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</template>
-        </Skill-card>
-        <Skill-card
-          :flipped="true"
-          :animate="shouldAnimate('frontend')"
-          key="frontend"
-          :icons="['https://cdn.worldvectorlogo.com/logos/javascript.svg','https://cdn.worldvectorlogo.com/logos/html-5.svg', 'https://cdn.worldvectorlogo.com/logos/css-3.svg','https://cdn.worldvectorlogo.com/logos/sass-1.svg','https://cdn.worldvectorlogo.com/logos/vue-9.svg', 'https://cdn.worldvectorlogo.com/logos/react.svg', 'https://cdn.worldvectorlogo.com/logos/redux.svg', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/logo-man.svg', 'https://cdn.worldvectorlogo.com/logos/foundation.svg', 'https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg']"
-        >
-          <template slot="skill">Frontend</template>
-          <template slot="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</template>
-        </Skill-card>
-        <Skill-card
-          :animate="shouldAnimate('ios')"
-          key="ios"
-          :icons="['https://cdn.worldvectorlogo.com/logos/react.svg']"
-        >
-          <template slot="skill">iOS + Android</template>
-          <template slot="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</template>
-        </Skill-card>
-        <Skill-card
-          :flipped="true"
-          :animate="shouldAnimate('tooling')"
-          key="tooling"
-          :icons="['https://cdn.worldvectorlogo.com/logos/webpack.svg', 'https://cdn.worldvectorlogo.com/logos/babel-10.svg', 'https://cdn.worldvectorlogo.com/logos/docker.svg', 'https://cdn.worldvectorlogo.com/logos/gulp.svg',]"
-        >
-          <template slot="skill">Tooling</template>
-          <template slot="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</template>
-        </Skill-card>
-        <Skill-card :animate="shouldAnimate('prototyping')" key="prototyping">
-          <template slot="skill">Prototyping</template>
-          <template slot="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</template>
-        </Skill-card>
+        <Scroll-view>
+          <template scope="inView">
+            <Skill-card
+              :animate="inView.backend"
+              key="backend"
+              :icons="['https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg', 'https://cdn.worldvectorlogo.com/logos/firebase-1.svg', 'https://cdn.worldvectorlogo.com/logos/mongodb.svg', 'https://cdn.worldvectorlogo.com/logos/mysql.svg', 'https://cdn.worldvectorlogo.com/logos/laravel.svg', 'https://cdn.worldvectorlogo.com/logos/wordpress-blue.svg']"
+            >
+              <template slot="skill">Backend</template>
+              <template slot="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</template>
+            </Skill-card>
+          </template>
+        </Scroll-view>
+            <!-- <Skill-card
+              :flipped="true"
+              :animate="props.test"
+              key="frontend"
+              :icons="['https://cdn.worldvectorlogo.com/logos/javascript.svg','https://cdn.worldvectorlogo.com/logos/html-5.svg', 'https://cdn.worldvectorlogo.com/logos/css-3.svg','https://cdn.worldvectorlogo.com/logos/sass-1.svg','https://cdn.worldvectorlogo.com/logos/vue-9.svg', 'https://cdn.worldvectorlogo.com/logos/react.svg', 'https://cdn.worldvectorlogo.com/logos/redux.svg', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/logo-man.svg', 'https://cdn.worldvectorlogo.com/logos/foundation.svg', 'https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg']"
+            >
+              <template slot="skill">Frontend</template>
+              <template slot="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</template>
+            </Skill-card>
+            <Skill-card
+              :animate="props"
+              key="ios"
+              :icons="['https://cdn.worldvectorlogo.com/logos/react.svg']"
+            >
+              <template slot="skill">iOS + Android</template>
+              <template slot="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</template>
+            </Skill-card>
+            <Skill-card
+              :flipped="true"
+              :animate="props"
+              key="tooling"
+              :icons="['https://cdn.worldvectorlogo.com/logos/webpack.svg', 'https://cdn.worldvectorlogo.com/logos/babel-10.svg', 'https://cdn.worldvectorlogo.com/logos/docker.svg', 'https://cdn.worldvectorlogo.com/logos/gulp.svg',]"
+            >
+              <template slot="skill">Tooling</template>
+              <template slot="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</template>
+            </Skill-card>
+            <Skill-card
+              :animate="props"
+              key="prototyping"
+            >
+              <template slot="skill">Prototyping</template>
+              <template slot="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</template>
+            </Skill-card> -->
+
       </div>
     </div>
   </section>
@@ -54,10 +62,12 @@
 <script>
 import throttle from 'lodash.throttle'
 import SkillCard from './SkillCard'
+import ScrollView from './ScrollView'
 
 export default {
   components: {
     SkillCard,
+    ScrollView,
   },
   data() {
     return {

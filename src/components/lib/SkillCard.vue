@@ -16,7 +16,7 @@
           </p>
         </transition>
       </div>
-      <Slider :images="icons" :animate="animate"></Slider>
+      <!-- <Slider :images="icons" :animate="animate"></Slider> -->
     </div>
   </section>
 </template>
