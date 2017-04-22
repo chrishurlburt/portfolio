@@ -24,7 +24,7 @@ $component: '.logo';
 
 #{$component} .logo-background {
   opacity: 0;
-  animation: fade 1s ease-in 2.3s forwards;
+  animation: fade .3s ease-in 2.3s forwards;
 }
 
 @keyframes draw {

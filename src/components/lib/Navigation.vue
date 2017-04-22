@@ -1,24 +1,30 @@
 <template>
-  <nav class="navigation">
-    <a href="/#/" class="nav-logo">
-      <Logo :still="true" />
-    </a>
-    <ul class="nav-list">
-      <li class="nav-list-item"><router-link to="about">About</router-link></li>
-      <li class="nav-list-item"><router-link to="work">Work</router-link></li>
-      <li class="nav-list-item"><router-link to="experiments">Experiments</router-link></li>
-      <li class="nav-list-item"><router-link to="contact">Contact</router-link></li>
-    </ul>
-  </nav>
+  <section class="navigation" :class="{ flipped }">
+    <div class="navigation-inner" @click="navigate">
+      <p class="page-title">{{ to }}</p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="30" class="arrow">
+        <path fill="#273B4E" fill-rule="evenodd" stroke="#273B4E" d="M4 1v25m0 0l3-10.8H1L4 26z" stroke-linecap="square"/>
+      </svg>
+    </div>
+  </section>
 </template>
 
 <script>
-import Logo from './Logo'
-
-
 export default {
-  components: {
-    Logo
+  methods: {
+    navigate() {
+      this.$router.push({ name: this.to })
+    }
   },
+  props: {
+    to: {
+      type: String,
+      required: true
+    },
+    flipped: {
+      type: Boolean,
+      default: () => false
+    }
+  }
 }
 </script>
