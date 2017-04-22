@@ -7,16 +7,15 @@
 @import 'globals/palette';
 @import 'globals/typography';
 @import 'globals/scaffolding';
-@import 'globals/vueTransitions';
+@import 'globals/layout';
 
 // pages
 @import 'pages/home';
+@import 'pages/work';
 @import 'pages/about';
+@import 'pages/me';
 
 // Components
 @import 'components/logo';
 @import 'components/navigation';
-@import 'components/copyRow';
-@import 'components/skills';
-@import 'components/skillCard';
-@import 'components/slider';
+@import 'components/projectCard';

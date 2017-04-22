@@ -1,8 +1,12 @@
 $page: '.page.about-page';
 
 #{$page} {
-  padding-bottom: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 18%;
 }
 
-#{$page} .page-inner {
+#{$page} .about-title {
+  margin: 0;
 }

@@ -2,56 +2,30 @@ $component: '.navigation';
 
 #{$component} {
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
   justify-content: center;
-  width: 100%;
-  padding: 25px 0;
-  z-index: 2;
+  padding-bottom: 20px;
 }
 
-#{$component} .nav-logo {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 65px;
-  height: 65px;
-  transition: opacity .2s ease-in;
-}
-
-#{$component} .nav-list {
+#{$component} #{$component}-inner {
   display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-#{$component} .nav-list-item {
-  color: $blue;
-  font-family: $anaheim;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  &::after {
-    display: inline-block;
-    margin: 0 10px;
-    content: '/';
-  }
-  &:last-child::after {
-    display: none;
-  }
+#{$component} .page-title {
+  margin: 0 0 3px 0;
 }
 
-#{$component} .nav-list-item a {
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
+#{$component}.flipped {
+  padding-bottom: 0;
+  padding-top: 20px;
+  .arrow {
+    order: 0;
+    transform: rotateX(180deg);
   }
-}
-
-#{$home-page} #{$component} .nav-logo {
-  opacity: 0;
-  pointer-events: none;
+  .page-title {
+    order: 1;
+    margin: 3px 0 0 0;
+  }
 }
