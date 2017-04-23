@@ -1,0 +1,32 @@
+{
+
+  "hackable-podcast": {
+    "title": "Hackable? Podcast",
+    "thumbnail": "https://source.unsplash.com/category/technology/700x700",
+    "orientation": "wide"
+  },
+
+  "forevermark-marketing-portal": {
+    "title": "Forevermark Marketing Portal",
+    "thumbnail": "https://source.unsplash.com/category/technology/800x800",
+    "orientation": "wide"
+  },
+
+  "island-of-hackable-toys": {
+    "title": "Island of Hackable Toys",
+    "thumbnail": "https://source.unsplash.com/category/technology/600x600",
+    "orientation": "wide"
+  },
+
+  "accurate-silentpak": {
+    "title": "Accurate SilentPak",
+    "thumbnail": "https://source.unsplash.com/category/technology/300x600",
+    "orientation": "narrow"
+  },
+
+  "uncle-julios-chocolate-pinata": {
+    "title": "Uncle Julio's Chocolate Pinata",
+    "thumbnail": "https://source.unsplash.com/category/technology/350x600",
+    "orientation": "narrow"
+  }
+}

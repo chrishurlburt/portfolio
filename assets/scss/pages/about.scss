@@ -10,3 +10,7 @@ $page: '.page.about-page';
 #{$page} .about-title {
   margin: 0;
 }
+
+#{$page} .about-bio {
+  margin: 5px 0;
+}

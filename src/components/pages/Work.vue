@@ -1,23 +1,42 @@
 <template>
   <section class="work-page">
     <div class="desktop-column">
-      <ProjectCard title="Hackable? Podcast" image="https://source.unsplash.com/category/technology/700x700" />
-      <ProjectCard title="Forevermark Marketing Portal" description="a few words about the project can go here" image="https://source.unsplash.com/category/technology/800x800" />
-      <ProjectCard title="Island of Hackable Toys" description="a few words about the project can go here" image="https://source.unsplash.com/category/technology/600x600" />
+      <ProjectCard v-for="wide in grid.wide" :title="wide.title" :thumbnail="wide.thumbnail" :slug="wide.slug" :key="wide.name" />
     </div>
     <div class="mobile-column">
-      <ProjectCard title="Accurate SilentPak" image="https://source.unsplash.com/category/technology/300x600" />
-      <ProjectCard title="Uncle Julio's Chocolate Pinata" description="a few words about the project can go here" image="https://source.unsplash.com/category/technology/350x600" />
+      <ProjectCard v-for="narrow in grid.narrow" :title="narrow.title" :thumbnail="narrow.thumbnail" :slug="narrow.slug" :key="narrow.name" />
     </div>
   </section>
 </template>
 
 <script>
+import portfolio from '../../../data/portfolio.json'
 import ProjectCard from '../lib/ProjectCard'
 
 export default {
   components: {
     ProjectCard
+  },
+  data() {
+    return {
+      grid: {
+        wide: [],
+        narrow: []
+      },
+    }
+  },
+  methods: {
+    makeGrid() {
+      Object.keys(portfolio).reduce((acc, item) => {
+        const project = portfolio[item]
+        project.slug = item
+        acc[portfolio[item].orientation].push(project)
+        return acc
+      }, this.grid)
+    },
+  },
+  created() {
+    this.makeGrid()
   }
 }
 </script>
