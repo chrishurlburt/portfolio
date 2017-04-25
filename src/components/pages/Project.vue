@@ -10,16 +10,26 @@
       <h2 class="project-title">{{ projectData.title }}</h2>
     </header>
     <Device />
+    <Detail-row
+      v-for="(detail, index) in projectData.details"
+      :key="index"
+      :flipped="!index % 2 === 0"
+      :title="detail.title"
+      :description="detail.description"
+      :meta="detail.meta"
+    ></Detail-row>
   </section>
 </template>
 
 <script>
 import portfolio from '../../../data/portfolio.json'
 import Device from '../lib/Device'
+import DetailRow from '../lib/DetailRow'
 
 export default {
   components: {
-    Device
+    Device,
+    DetailRow,
   },
   data() {
     return {

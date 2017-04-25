@@ -75,9 +75,7 @@ export default {
       return routes.findIndex(route => route.name === name)
     },
     setNavigationRoutes() {
-      this.navigationRoutes = this.$router.options.routes.reduce(
-        (acc, route) => (route.meta && !route.meta.isNav) ? acc : [...acc, route] // TODO: refactor
-      , [])
+      this.navigationRoutes = this.$router.options.routes.filter(route => !route.meta || !route.meta.excludeFromNav)
     }
   },
   computed: {
