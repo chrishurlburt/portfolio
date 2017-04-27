@@ -1,0 +1,17 @@
+$page: '.page.service-outline-page';
+
+#{$page} {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $blue;
+}
+
+#{$page} .service-headline-wrap {
+  max-width: 50%;
+}
+
+#{$page} .service-headline {
+  color: #fff;
+  letter-spacing: 3px;
+}
