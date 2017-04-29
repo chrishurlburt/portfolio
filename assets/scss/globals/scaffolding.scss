@@ -13,7 +13,7 @@ html, body, #app, .layout {
   margin: 0;
 }
 
-a, p, li, label, span {
+a, p, li, label, span, input, textarea {
   color: $blue;
   font-family: $anaheim;
 }
@@ -32,6 +32,23 @@ h2 {
   font-size: 36px;
 }
 
-.page {
-  height: 100%;
+a {
+  position: relative;
+  text-decoration: none;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: $blue;
+    transform: translateY(5px);
+    opacity: 0;
+    transition: all .2s;
+  }
+  &:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

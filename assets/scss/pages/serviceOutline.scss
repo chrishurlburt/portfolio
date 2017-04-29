@@ -14,4 +14,8 @@ $page: '.page.service-outline-page';
 #{$page} .service-headline {
   color: #fff;
   letter-spacing: 3px;
+  .bold {
+    font-family: $overpass;
+    color: #fff;
+  }
 }

@@ -4,6 +4,10 @@ $right-transition-duration: .6s;
   display: flex;
 }
 
+.page {
+  height: 100%;
+}
+
 .left, .right {
   flex: 1;
 }

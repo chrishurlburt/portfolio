@@ -78,12 +78,6 @@ export default {
       this.navigationRoutes = this.$router.options.routes.filter(route => !route.meta || !route.meta.excludeFromNav)
     }
   },
-  computed: {
-    ...mapState({
-      next: state => state.navigation.next,
-      previous: state => state.navigation.previous
-    })
-  },
   created() {
     this.routeBodyClasser(this.$route, undefined)
     this.setNavigationRoutes()

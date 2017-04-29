@@ -1,7 +1,7 @@
 <template>
   <section class="contact-page">
     <div class="contact-page-inner">
-      <h2 class="contact-page-cta">Lets talk</h2>
+      <h2 class="contact-page-cta">Let's talk</h2>
       <ContactForm />
     </div>
   </section>
