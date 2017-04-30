@@ -3,6 +3,8 @@ $area: '.text-field';
 
 $border-color: $blue;
 $border-width: 2px;
+$error-color: #F44336;
+
 
 #{$input}, #{$area} {
   position: relative;
@@ -77,6 +79,18 @@ $border-width: 2px;
 }
 
 #{$input}, #{$area} {
+  .error-message {
+    margin: 6px 0 0;
+    color: $error-color;
+  }
+}
+
+#{$area} .error-message {
+  position: absolute;
+  top: 100%;
+}
+
+#{$input}, #{$area} {
   .input-border {
     position: absolute;
     top: 0;
@@ -129,5 +143,15 @@ $border-width: 2px;
   .input-placeholder {
     opacity: 0;
     transform: translateX(12px);
+  }
+}
+
+
+#{$input}.error, #{$area}.error {
+  .input-right, .input-left, .input-top {
+    border-color: $error-color;
+  }
+  .text-input--inner {
+    border-color: $error-color;
   }
 }

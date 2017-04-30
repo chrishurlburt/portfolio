@@ -1,6 +1,6 @@
 $component: '.contact-form';
 
-#{$component} {
+#{$component} .contact-form--inner {
   display: flex;
   flex-direction: column;
 }
