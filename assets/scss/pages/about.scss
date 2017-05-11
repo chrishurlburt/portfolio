@@ -4,13 +4,13 @@ $page: '.page.about-page';
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0 18%;
+  padding: 0 124px;
 }
 
 #{$page} .about-title {
-  margin: 0;
+  // margin: 0;
 }
 
 #{$page} .about-bio {
-  margin: 5px 0;
+  // margin: 5px 0;
 }

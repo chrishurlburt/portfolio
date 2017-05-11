@@ -42,7 +42,7 @@ export default {
     }
   },
   created() {
-    this.projectData = portfolio[this.project]
+    this.projectData = portfolio.work[this.project]
   },
   props: {
     project: {

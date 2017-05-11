@@ -1,16 +1,19 @@
 <template>
   <section class="services-page">
     <ul class="services-list">
-      <li><a href="">Websites</a></li>
-      <li><a href="">Web Apps</a></li>
-      <li><a href="">iOS + Android</a></li>
-      <li><a href="">API Development</a></li>
+      <li v-for="(data, service) in services"><a href @click.prevent="() => $bus.$emit('service:show', service)">{{ service }}</a></li>
     </ul>
   </section>
 </template>
 
 <script>
-export default {
+import portfolio from '../../../data/portfolio.json'
 
+export default {
+  computed: {
+    services() {
+      return portfolio.services
+    }
+  }
 }
 </script>

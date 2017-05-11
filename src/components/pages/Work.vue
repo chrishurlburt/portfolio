@@ -27,10 +27,10 @@ export default {
   },
   methods: {
     makeGrid() {
-      Object.keys(portfolio).reduce((acc, item) => {
-        const project = portfolio[item]
+      Object.keys(portfolio.work).reduce((acc, item) => {
+        const project = portfolio.work[item]
         project.slug = item
-        acc[portfolio[item].orientation].push(project)
+        acc[portfolio.work[item].orientation].push(project)
         return acc
       }, this.grid)
     },
